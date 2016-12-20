@@ -108,6 +108,10 @@ namespace AWorldWithoutHat
                     }
                 }
             }
+            if (!portrait && rendererPawn.RaceProps.Animal && rendererPawn.inventory != null && rendererPawn.inventory.innerContainer.Count > 0)
+            {
+                Graphics.DrawMesh(mesh, loc2, quat, renderer.graphics.packGraphic.MatAt(rendererPawn.Rotation, null), 0);
+            }
             if (!portrait)
             {
                 renderer.CallMethodViaReflection("DrawEquipment", rootLoc);
